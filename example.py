@@ -20,6 +20,21 @@ def get_current_path():
     return os.path.dirname(os.path.abspath(__file__))
 
 
+def function_with_full_docstring(a: int, b: str) -> str:
+    """
+    Some description of the function with args and returns
+
+    Args:
+        a: The first argument
+        b: The second argument
+
+    Returns:
+        The joined string
+    """
+    # Comment about what is happening in this function
+    return f"a: {a}, b: {b}"
+
+
 class SomeClass:
     def __init__(self, a: int, b: str):
         self.a = a
@@ -39,6 +54,16 @@ class SomeClass:
         # Comment about what is happening in this method
         s = (separator if separator else "\n").join([f"a: {self.a}", f"b: {self.b}"])
         return s
+
+    class NestedClass:
+        def __init__(self, c: int):
+            self.c = c
+
+        def add_to_a(self, a: int):
+            """
+            Some description of method in nested class
+            """
+            return a + self.c
 
     def method_with_no_docstring(self):
         return self.a, self.b
