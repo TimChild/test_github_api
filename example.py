@@ -35,6 +35,13 @@ def function_with_full_docstring(a: int, b: str) -> str:
     return f"a: {a}, b: {b}"
 
 
+def a_new_function():
+    """
+    A function with no args or returns
+    """
+    return "Hello"
+
+
 class SomeClass:
     def __init__(self, a: int, b: str):
         self.a = a
